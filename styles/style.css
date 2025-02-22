@@ -13,4 +13,246 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: var(--font-regular);
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.header {
+  margin: 100px auto;
+  display: grid;
+  place-items: center;
+  font-family: var(--accent-font);
+  padding: var(--header-padding);
+  border: 2px solid var(--main-color);
+  inline-size: var(--block-size);
+  background-color: var(--bg-color);
+}
+
+.header__title {
+  font-size: var(--text-size-xxl);
+}
+
+.header__text {
+  font-size: var(--text-size-xl);
+  text-transform: uppercase;
+  padding-block-start: 20px;
+  text-align: center;
+}
+
+.text {
+  text-transform: lowercase;
+}
+
+.article {
+  font-family: var(--main-font);
+  font-size: 18px;
+  margin: 50px auto;
+  border: 2px solid var(--main-color);
+  inline-size: var(--block-size);
+  background-color: var(--bg-color);
+}
+
+.article__title {
+  font-family: Inter-Variable;
+  font-size: 18px;
+  padding: var(--title-padding);
+  font-variation-settings: var(--font-bold);
+}
+
+.article__img-wrapper {
+  border-block: 2px solid var(--main-color);
+  position: relative;
+}
+
+.picture {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+}
+
+.brightness {
+  filter: brightness(150%);
+}
+
+.contrast {
+  filter: contrast(30%);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.grayscale {
+  filter: grayscale(70%);
+}
+
+.rotate-sepia {
+  filter: hue-rotate(-90deg) sepia(100%);
+}
+
+.invert {
+  filter: invert(0.7);
+}
+
+.opacity {
+  filter: opacity(0.5);
+}
+
+.saturate {
+  filter: saturate(150%) ;
+}
+
+.article__img-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: var(--main-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow:
+    -1px 0 var(--color-stroke),
+    0 1px var(--color-stroke),
+    1px 0 var(--color-stroke),
+    0 -1px var(--color-stroke);
+}
+
+@supports (
+  (text-stroke: 1px var(--color-stroke)) or
+    (-webkit-text-stroke: 1px var(--color-stroke))
+) {
+
+  .article__img-label {
+    -webkit-text-stroke: 1px var(--color-stroke);
+    text-stroke: 1px var(--color-stroke);
+    text-shadow: none;
+  }
+}
+
+.container {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.article__button {
+  display: flex;
+  justify-self: end;
+  padding: 0 25px 21px 0;
+}
+
+.button {
+  background-color: transparent;
+  font-family: var(--accent-font);
+  border: 2px solid var(--main-color);
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  padding: 9px 17px;
+}
+
+.footer {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  margin-block-end: 103px;
+  background-color: var(--bg-color);
+}
+
+.footer__floppy {
+  max-inline-size: var(--floopy-size);
+  max-block-size: var(--floopy-size);
+}
+
+.save-button {
+  display: flex;
+  place-items: center;
+  gap: 8px;
+  min-block-size: var(--footer-button-s);
+  min-inline-size: var(--footer-button-m);
+  padding-inline-start: 19px;
+}
+
+.dialog {
+  padding: 28px;
+  inline-size: 353px;
+  block-size: 191px;
+  border: 2px solid var(--main-color);
+  margin: auto;
+}
+
+.dialog[open] .inner {
+  display: flex;
+  flex-direction: row;
+  padding-block-end: 30px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 150%;
+  gap: 20px;
+}
+
+.close-button {
+  text-transform: uppercase;
+  padding: 12.5px 131px;
+  border: none;
+  outline: 2px solid var(--main-color);
+}
+
+.dialog__floppy {
+  max-block-size: 39px;
+  max-inline-size: 39px;
+  margin: 12px 0;
+}
+
+.dialog__text {
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+@media (width <= 375px) {
+
+  :root {
+    --header-padding: 120px 14px;
+    --block-size: 100%;
+    --floopy-size: 28px;
+    --footer-button-s: 84px;
+    --footer-button-m: 305px;
+  }
+
+  .save-button {
+    padding: 15px 20.5px 15px 19.5px;
+    flex-direction: column;
+  }
 }

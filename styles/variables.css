@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --main-font: 'Inter-Variable', arial, sans-serif;
+  --accent-font: pressstart2p, 'Courier New', monospace;
+  --font-regular: 'wght' 400;
+  --font-bold: 'wght' 700;
+  --bg-color: #fff;
+  --bg-gradient: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+    linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a);
+  --text-size-xxl: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --text-size-xl: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --block-size: clamp(30%, 700px, 50%);
+  --title-padding: 5px 24px 5px 10px;
+  --color-stroke: #fff;
+  --main-color: #000;
+  --header-padding: 128px 120.5px;
+  --floopy-size: 21px;
+  --footer-button-s: 55px;
+  --footer-button-m: 339px;
+}
