@@ -154,6 +154,7 @@
   line-height: 90%;
   position: relative;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -345,7 +346,8 @@
 
 .close-button {
   text-transform: uppercase;
-  padding: 12.5px 122.5px;
+  padding-block: 12.5px;
+  min-inline-size: 100%;
 }
 
 .dialog__floppy {
