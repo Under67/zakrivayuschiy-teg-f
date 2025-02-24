@@ -21,26 +21,15 @@
   background-attachment: fixed;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .header {
   margin: 100px auto;
   display: grid;
   place-items: center;
   font-family: var(--accent-font);
-  padding: var(--header-padding);
   border: 2px solid var(--accent-color);
   inline-size: var(--block-size);
   background-color: var(--bg-color);
+  padding-block: var(--header-padding);
 }
 
 .header__title {
@@ -54,10 +43,6 @@
   text-align: center;
 }
 
-.text {
-  text-transform: lowercase;
-}
-
 .article {
   font-family: var(--main-font);
   font-size: 18px;
@@ -68,7 +53,7 @@
 }
 
 .article__title {
-  font-family: Inter-Variable;
+  font-family: var(--main-font);
   font-size: 18px;
   padding: var(--title-padding);
   font-variation-settings: 'wght' var(--font-bold);
@@ -168,19 +153,19 @@
   font-size: 14px;
   line-height: 90%;
   position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--accent-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: #000;
+  background-color: var(--contour-color);
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
   transform: scaleX(0);
@@ -213,7 +198,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
-  transition-duration: 0.3s;
   transition-timing-function: ease;
 }
 
@@ -287,7 +271,7 @@
 .like-icon.is-liked .main-body {
   fill: var(--sparks-color);
   transition-property: fill;
-  transition-delay: 0s;
+  transition-delay: 0.05s;
   transition-duration: 0.3s;
 }
 
@@ -314,7 +298,7 @@
   padding: 9px 17px;
 }
 
-.footer {
+.modal {
   display: flex;
   justify-self: center;
   flex-direction: column;
@@ -322,7 +306,7 @@
   background-color: var(--bg-color);
 }
 
-.footer__floppy {
+.modal__floppy {
   inline-size: var(--floopy-size);
   block-size: var(--floopy-size);
   mix-blend-mode: difference;
@@ -335,8 +319,8 @@
   display: flex;
   place-items: center;
   gap: 8px;
-  min-block-size: var(--footer-button-s);
-  min-inline-size: var(--footer-button-m);
+  min-block-size: var(--modal-button-s);
+  min-inline-size: var(--modal-button-m);
   padding-inline-start: 19px;
 }
 
@@ -345,13 +329,13 @@
   inline-size: 353px;
   block-size: 191px;
   border: 2px solid var(--accent-color);
-  margin: auto;
 }
 
 .dialog[open] .inner {
   display: flex;
   flex-direction: row;
   padding-block-end: 30px;
+  padding-inline-end: 5px;
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 150%;
@@ -380,11 +364,11 @@
 @media (width <= 375px) {
 
   :root {
-    --header-padding: 120px 14px;
+    --header-padding: 120px;
     --block-size: 100%;
     --floopy-size: 28px;
-    --footer-button-s: 84px;
-    --footer-button-m: 305px;
+    --moodal-button-s: 84px;
+    --modal-button-m: 305px;
   }
 
   .save-button {

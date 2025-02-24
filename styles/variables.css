@@ -2,7 +2,7 @@
 
 :root {
   --main-font: 'Inter-Variable', arial, sans-serif;
-  --accent-font: pressstart2p, 'Courier New', monospace;
+  --accent-font: pressstart2p, fantasy, monospace;
   --font-regular: 400;
   --font-bold: 700;
   --bg-color: #fff;
@@ -24,14 +24,14 @@
     linear-gradient(to bottom, #e7e7e7 0%, #1a1a1a);
   --text-size-xxl: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --text-size-xl: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  --block-size: clamp(30%, 700px, 50%);
+  --block-size: clamp(30%, 700px, 100%);
   --title-padding: 5px 24px 5px 10px;
   --main-color: #fff;
   --accent-color: #000;
-  --header-padding: 128px 120.5px;
+  --header-padding: 128px;
   --floopy-size: 21px;
-  --footer-button-s: 55px;
-  --footer-button-m: 339px;
+  --modal-button-s: 55px;
+  --modal-button-m: 339px;
   --contour-color: black;
   --sparks-color: #f00;
 }
